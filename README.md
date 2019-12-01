@@ -18,8 +18,8 @@ APIView
 
 
 All the operation can be performed using just 2 endpoints by these subclasses:
- - ListCreateAPIView : don't require primary key - 127.0.0.1:8000/api
- - RetrieveUpdateDestroyAPIView : require primary key - 127.0.0.1:8000/api/3
+ 1. ListCreateAPIView : don't require primary key - 127.0.0.1:8000/api
+ 2. RetrieveUpdateDestroyAPIView : require primary key - 127.0.0.1:8000/api/3
 
 
  Combinations -
