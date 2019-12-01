@@ -1,4 +1,4 @@
-# Django-REST_SubClass_of_APIView
+# Django-REST SubClasses of APIView
 
 All the CRUD operation using the subclasses of APIVIew
 
@@ -17,7 +17,7 @@ APIView
   - RetrieveUpdateDestroyAPIView
 
 
-All the operation can be performed using just 2 endpoints by these subclasses -
+All the operation can be performed using just 2 endpoints by these subclasses:
  - ListCreateAPIView : don't require primary key - 127.0.0.1:8000/api
  - RetrieveUpdateDestroyAPIView : require primary key - 127.0.0.1:8000/api/3
 
