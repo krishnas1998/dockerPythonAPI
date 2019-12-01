@@ -3,6 +3,7 @@
 All the CRUD operation using the subclasses of APIVIew
 
 APIView
+
   - ListAPIView
   - CreateAPIView
 
@@ -15,6 +16,9 @@ APIView
   - RetrieveDestroyAPIView
 
   - RetrieveUpdateDestroyAPIView
+  
+  
+NOTE:- None of the classes like ListAPIView, CreateAPIView, RetrieveAPIView etc. extends APIView both are fro different packages. These are just to set some analogy.
 
 
 All the operation can be performed using just 2 endpoints by these subclasses:
