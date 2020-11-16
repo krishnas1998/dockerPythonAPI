@@ -1,7 +1,7 @@
 from django.db import models
 
-class Employee(models.Model):
-    eno = models.IntegerField()
-    ename = models.CharField(max_length=64)
-    esal = models.FloatField()
-    eaddr = models.CharField(max_length=64)
+class Container(models.Model):
+    name = models.CharField(max_length=64)
+    image = models.CharField(max_length=64)
+    labels = models.CharField(max_length=64)
+    status = models.CharField(max_length=64)
