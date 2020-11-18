@@ -6,6 +6,7 @@ from rest_framework.response import Response
 
 #-----------------------------------------------------------------------------------------------
 # Create a new ubuntu container and returns the provision id/ container id
+# Parameters:
 # cpu_cores -> Number of usable CPUs (Windows only)
 # mem_limit -> (int or str): Memory limit. Accepts float values
 #                (which represent the memory limit of the created container in
@@ -19,8 +20,14 @@ class GetProvisionID(APIView):
     def get(self, request, cpu_cores, memory, login_method, format=None):
         client = docker.from_env()
         image_name = "ubuntu"
-        container = client.containers.run(image_name, detach=True, cpu_count=cpu_cores, mem_limit=memory )
-        return Response({'provision_id':container.id})
+        container = client.containers.run(image_name,command="/bin/bash", tty=True, detach=True, cpu_count=cpu_cores, mem_limit=memory )
+        
+        if hasattr(container, 'id'):
+            response = {'provision_id':container.id}
+        else:
+            response = {'error': 'Eror provision id cannot be retrieved'}
+        # container.stop()
+        return Response(response)
 
 #-----------------------------------------------------------------------------------------------
 # Returns the provision status of the container of passed provision id
